@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Anamorphic — edgeloop</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="cat-page">
+
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+  <div class="scan-overlay"></div>
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- BACK -->
+  <a href="index.html" class="cat-back">
+    <span class="cat-back-arrow">←</span>
+    edgeloop
+  </a>
+
+  <!-- HERO -->
+  <section class="cat-hero">
+
+    <!-- Animated perspective-grid accent (top-right) -->
+    <svg style="position:absolute;right:48px;top:40px;opacity:0.18;pointer-events:none;" width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="white" stroke-width="0.6">
+        <!-- perspective lines to vanishing point -->
+        <line x1="110" y1="80" x2="20"  y2="220"/>
+        <line x1="110" y1="80" x2="60"  y2="220"/>
+        <line x1="110" y1="80" x2="110" y2="220"/>
+        <line x1="110" y1="80" x2="160" y2="220"/>
+        <line x1="110" y1="80" x2="200" y2="220"/>
+        <!-- horizontal rows -->
+        <line x1="20" y1="220" x2="200" y2="220" opacity="0.5"/>
+        <line x1="35" y1="185" x2="185" y2="185" opacity="0.4"/>
+        <line x1="52" y1="150" x2="168" y2="150" opacity="0.3"/>
+        <line x1="70" y1="118" x2="150" y2="118" opacity="0.2"/>
+        <line x1="88" y1="94"  x2="132" y2="94"  opacity="0.12"/>
+      </g>
+      <!-- hex rings floating -->
+      <g stroke="rgba(100,110,255,0.4)" stroke-width="0.8" fill="none">
+        <polygon points="110,18 128,28 128,48 110,58 92,48 92,28"/>
+        <polygon points="110,12 132,24 132,52 110,64 88,52 88,24" opacity="0.3"/>
+      </g>
+      <circle cx="110" cy="18" r="2.5" fill="white" opacity="0.7"/>
+      <circle cx="110" cy="80" r="1.5" fill="rgba(100,110,255,0.8)"/>
+    </svg>
+
+    <div class="cat-eyebrow">edgeloop · category 01</div>
+    <h1 class="cat-title">3D Anamorphic</h1>
+    <div class="cat-meta">
+      <div class="cat-tag-pill">OOH</div>
+      <div class="cat-tag-pill">Immersive</div>
+      <div class="cat-tag-pill">LED Installations</div>
+      <p class="cat-desc">Large-format illusion content engineered for LED cubes, mega screens, and out-of-home installations. Brands like Novo Nordisk, EXCON, Tata AI Summit, and Aditya Birla.</p>
+    </div>
+  </section>
+
+  <!-- 6-SLOT VIDEO GRID -->
+  <section class="cat-grid-section">
+    <div class="cat-grid-header reveal">
+      <span class="cat-grid-label">— projects</span>
+      <span class="cat-grid-count">06 slots</span>
+    </div>
+
+    <div class="cat-grid reveal">
+
+      <!-- SLOT 01 -->
+      <div class="vid-slot">
+        <span class="vid-slot-num">01</span>
+        <div class="vid-slot-empty">
+          <div class="vid-slot-icon">▶</div>
+          <span class="vid-slot-label">drop video here</span>
+        </div>
+        <div class="vid-slot-overlay"></div>
+        <div class="vid-slot-play">▶</div>
+        <div class="vid-slot-info">
+          <div class="vid-slot-title">Project 01</div>
+          <div class="vid-slot-cat">3D Anamorphic</div>
+        </div>
+        <div class="vid-slot-border"></div>
+      </div>
+
+      <!-- SLOT 02 -->
+      <div class="vid-slot">
+        <span class="vid-slot-num">02</span>
+        <div class="vid-slot-empty">
+          <div class="vid-slot-icon">▶</div>
+          <span class="vid-slot-label">drop video here</span>
+        </div>
+        <div class="vid-slot-overlay"></div>
+        <div class="vid-slot-play">▶</div>
+        <div class="vid-slot-info">
+          <div class="vid-slot-title">Project 02</div>
+          <div class="vid-slot-cat">3D Anamorphic</div>
+        </div>
+        <div class="vid-slot-border"></div>
+      </div>
+
+      <!-- SLOT 03 -->
+      <div class="vid-slot">
+        <span class="vid-slot-num">03</span>
+        <div class="vid-slot-empty">
+          <div class="vid-slot-icon">▶</div>
+          <span class="vid-slot-label">drop video here</span>
+        </div>
+        <div class="vid-slot-overlay"></div>
+        <div class="vid-slot-play">▶</div>
+        <div class="vid-slot-info">
+          <div class="vid-slot-title">Project 03</div>
+          <div class="vid-slot-cat">3D Anamorphic</div>
+        </div>
+        <div class="vid-slot-border"></div>
+      </div>
+
+      <!-- SLOT 04 -->
+      <div class="vid-slot">
+        <span class="vid-slot-num">04</span>
+        <div class="vid-slot-empty">
+          <div class="vid-slot-icon">▶</div>
+          <span class="vid-slot-label">drop video here</span>
+        </div>
+        <div class="vid-slot-overlay"></div>
+        <div class="vid-slot-play">▶</div>
+        <div class="vid-slot-info">
+          <div class="vid-slot-title">Project 04</div>
+          <div class="vid-slot-cat">3D Anamorphic</div>
+        </div>
+        <div class="vid-slot-border"></div>
+      </div>
+
+      <!-- SLOT 05 -->
+      <div class="vid-slot">
+        <span class="vid-slot-num">05</span>
+        <div class="vid-slot-empty">
+          <div class="vid-slot-icon">▶</div>
+          <span class="vid-slot-label">drop video here</span>
+        </div>
+        <div class="vid-slot-overlay"></div>
+        <div class="vid-slot-play">▶</div>
+        <div class="vid-slot-info">
+          <div class="vid-slot-title">Project 05</div>
+          <div class="vid-slot-cat">3D Anamorphic</div>
+        </div>
+        <div class="vid-slot-border"></div>
+      </div>
+
+      <!-- SLOT 06 -->
+      <div class="vid-slot">
+        <span class="vid-slot-num">06</span>
+        <div class="vid-slot-empty">
+          <div class="vid-slot-icon">▶</div>
+          <span class="vid-slot-label">drop video here</span>
+        </div>
+        <div class="vid-slot-overlay"></div>
+        <div class="vid-slot-play">▶</div>
+        <div class="vid-slot-info">
+          <div class="vid-slot-title">Project 06</div>
+          <div class="vid-slot-cat">3D Anamorphic</div>
+        </div>
+        <div class="vid-slot-border"></div>
+      </div>
+
+    </div>
+
+    <div class="cat-grid-cta reveal">
+      <span class="cat-grid-note">click any slot to load a video or image</span>
+      <a href="https://www.behance.net/gallery/238866345/Edgeloop-2025-Portfolio" target="_blank" rel="noopener" class="btn-outline">
+        full portfolio <span class="btn-arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER STRIP -->
+  <footer class="cat-footer">
+    <a href="index.html" class="cat-footer-logo">edgeloop</a>
+    <ul class="cat-footer-links">
+      <li><a href="brand.html">brand work →</a></li>
+      <li><a href="artist.html">artist visuals →</a></li>
+    </ul>
+    <span class="footer-copy">© 2025 edgeloop.</span>
+  </footer>
+
+  <script src="cat-script.js"></script>
+</body>
+</html>
