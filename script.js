@@ -287,6 +287,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ──────────────────────────────────────────────────────────
+     6.5. PROJECT CARD VIDEO PLAYBACK
+  ────────────────────────────────────────────────────────── */
+  document.querySelectorAll('.project-card').forEach(card => {
+    const video = card.querySelector('.card-video');
+    const playBtn = card.querySelector('.play-button');
+    
+    if (!video || !playBtn) return;
+
+    // Play button click
+    playBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (video.paused) {
+        video.play();
+        video.classList.add('playing');
+        playBtn.classList.add('hidden');
+      }
+    });
+
+    // Video click to toggle
+    video.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+
+    // Play event
+    video.addEventListener('play', () => {
+      video.classList.add('playing');
+      playBtn.classList.add('hidden');
+    });
+
+    // Pause event
+    video.addEventListener('pause', () => {
+      video.classList.remove('playing');
+      playBtn.classList.remove('hidden');
+    });
+
+    // Card mouse leave - reset video
+    card.addEventListener('mouseleave', () => {
+      video.pause();
+      video.currentTime = 0;
+      video.classList.remove('playing');
+      playBtn.classList.remove('hidden');
+    });
+  });
+
+
+  /* ──────────────────────────────────────────────────────────
      7. OUR WORK CATEGORY CANVASES
   ────────────────────────────────────────────────────────── */
   const wcatConfig = [
